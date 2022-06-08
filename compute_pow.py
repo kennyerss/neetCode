@@ -14,22 +14,37 @@ def compute_pow(x, y):
             ex: x^10 = (x^5)^2
         - Change power y to -y and double x to 1/x when y is negative
     '''
+    # Recursively is to do modular exponentiation
+    # Runtime: O(logn) where n is the exponent and Space: O(1)
+    # Base case if y==0 or y==1 or y is negative
+    if y == 0:
+        return 1
+    if y == 1:
+        return x
+    if y == -1:
+        return 1/x
 
-    # Initialize result and power
-    result, power = 1.0, y
+    # Store result being the floor integer of the exponent
+    result = compute_pow(x, y//2)
 
-    # Change power and result if y is negative
-    if power < 0:
-        x, power = 1.0/x, -y
+    # Recursive call
+    return result * result * (x if y % 2 else 1)
 
-    # Iterate while power
-    while power:
-        # Base case
-        if power & 1:  # Think of power exponent in binary
-            result = result * x
-        # Otherwise, you multiply x by itself and right shift the power
-        x, power = x * x, power >> 1
-    return result
+    # # Initialize result and power
+    # result, power = 1.0, y
+
+    # # Change power and result if y is negative
+    # if power < 0:
+    #     x, power = 1.0/x, -y
+
+    # # Iterate while power
+    # while power:
+    #     # Base case
+    #     if power & 1:  # Think of power exponent in binary
+    #         result = result * x
+    #     # Otherwise, you multiply x by itself and right shift the power
+    #     x, power = x * x, power >> 1
+    # return result
 
 
 print(compute_pow(2.5, 2))
