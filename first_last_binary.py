@@ -4,77 +4,63 @@
 # Split into two functions: finding the first... and finding the last indices
 
 # Finding the first index
-# Base case: If first index of array is equal to target return index
-# Two pointers: one for left and one for right
-# Take the mid-pointer... if mid == target AND mid-1 < target then return mid
-# If mid < target then left = mid
-# If mid > target then right = mid
-# Return -1 if target not found
-
-from tkinter import W
-
-
 def firstIndex(arr, target):
     '''
     Going to find the first index of target in sorted array
     Return -1 if target is not found
     '''
 
+    # Base case: If first index of array is equal to target return index
     if arr[0] == target:
         return 0
-
+    # Two pointers: one for left and one for right
     left = 0
     right = len(arr) - 1
 
+    # Take the mid-pointer... if mid == target AND mid-1 < target then return mid
     while left <= right:
         # Takes the floor division to get the mid pointer with also considering overflow
         mid = (left + right) // 2
 
         if arr[mid] == target and arr[mid-1] < target:
             return mid
-
+        # If mid < target then left = mid+1
         elif arr[mid] < target:
             left = mid+1
-
         else:
+            # If mid > target then right = mid-1
             right = mid-1
-
+    # Return -1 if target not found
     return -1
 
 
 # Finding the last index
-# Base case: If last index is equal to target then return last index
-# Create two pointers: left (start of array) and right (end of array)
-# Iterate through array while left < right
-# Take the mid pointer
-# If arr[mid] == target and arr[mid+1] > target then return mid
-# If arr[mid] < target:
-#     left = mid + 1
-# else we increment right = mid - 1
-
-
 def lastIndex(arr, target):
+    """
+    Takes in sorted array of integers and returns the last index of the target integer
+    Returns -1 otherwise target not found
+    """
 
-    # Takes in sorted array of integers and returns the last index of the target integer
-    # Returns -1 otherwise target not found
-
+    # Base case: If last index is equal to target then return last index
     if arr[-1] == target:
         return len(arr) - 1  # last index
-
+    # Create two pointers: left (start of array) and right (end of array)
     left = 0
     right = len(arr) - 1
-
+    # Iterate through array while left < right
     while left <= right:
-        mid = (left + right) // 2
+        mid = (left + right) // 2  # Take the mid pointer
 
+        # If arr[mid] == target and arr[mid+1] > target then return mid
         if arr[mid] == target and arr[mid+1] > target:
             return mid
-
+        # else we increment right = mid - 1
         elif arr[mid] > target:
             right = mid-1
-
+        # If arr[mid] < target:
         else:
             left = mid+1
+    # Return -1 if target is not found
     return -1
 
 
