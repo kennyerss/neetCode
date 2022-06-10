@@ -13,7 +13,7 @@ def permutations(nums):
         Can the elements of this array be duplicates? Negative? What would happen if we pass in an empty array?
 
         Using backtracking with recursion
-        Runtime: 
+        Runtime: O(Nlogn)
         Space: O(N)
     """
     # Base cases
