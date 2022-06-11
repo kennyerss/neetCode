@@ -1,4 +1,4 @@
-def kthLargest(arr, k):
+def kth_Largest(arr, k):
     '''
     Given array of integers and an integer k, find the kth largest element
 

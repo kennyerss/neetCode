@@ -16,5 +16,5 @@ def sumOfTwoArrays(arr1, arr2, target):
 
         hashMap[num] = difference
     # Iterate through second array
-    for num in arr2:
-        if
+    # for num in arr2:
+    #     if
