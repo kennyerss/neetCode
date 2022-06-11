@@ -11,7 +11,11 @@ def isomorphic_strings(s, t):
     Hashing Method -> O(n) runtime with O(n) space complexity where n is the length of the string
 
     """
-    # Base case if length of input strings are of different length, then we return False
+    # Base cases
+    # if not s return False
+    if not s:
+        return False
+    #  if length of input strings are of different length, then we return False
     if len(s) != len(t):
         return False
     # Create map {s:t} to map from s to t
