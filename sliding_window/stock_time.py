@@ -1,5 +1,12 @@
 class Solution:
     def max_profit(self, prices: List[int]) -> int:
+        """
+        Takes in an array of prices integers and returns the maximum profit that you can get with two days
+
+        Sliding window method
+        Runtime: O(n) where n is the size of our array
+        Space: O(1) since no additional data structure is created
+        """
         curr_max = 0  # Tracks profit
         # Two pointers, left and right days
         day1 = 0

@@ -22,7 +22,8 @@ def permutations(nums):
     if len(nums) == 1:
         # instead of nums.copy() we just return nums[:] index of whole
         return [nums[:]]
-    result = []
+
+    result = []  # Result array to store all our permutations
     # Iterate through len of nums
     for num in range(len(nums)):
         # Pop off the first index
