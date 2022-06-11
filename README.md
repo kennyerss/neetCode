@@ -1,5 +1,5 @@
-# neetCode and epi questions
+# neetCode 
 
 This is my repository for doing technical interview questions!
 
-Most will be Neetcode questions but some are from the EPI book
+Thank you for Neetcode for providing the set of problems in each topic. I've provided documentations on each solution in Python.
