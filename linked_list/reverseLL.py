@@ -19,7 +19,7 @@ def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
     while head:
         # Keep track of the next node with a temporary variable
         temp = curr.next
-        # Update our next node to be the previous nod e
+        # Update our next node to be the previous node
         curr.next = prev
         # Set previous to be the current node
         prev = curr

@@ -16,10 +16,8 @@ def majority_element(arr):
 
     # Iterate through array upto len(arr)
     for number in arr:
-        # If arr[i] is not in the counter dict, we put it with a default value of 1
-        if number not in counter:
-            counter[number] = 1
-        counter[number] += 1
+        # If arr[i] is not in the counter dict, we put it with a default value of 0
+        counter[number] = counter.get(number, 0) + 1
     # print(counter)
 
     # Iterate through items to get key, value pairs
@@ -30,5 +28,5 @@ def majority_element(arr):
     return -1  # If there is no majority element in array
 
 
-arr = [3, 2, 5, 6, 7, 7, 7, 3]
+arr = [3, 2, 2, 2, 3]
 print(majority_element(arr))

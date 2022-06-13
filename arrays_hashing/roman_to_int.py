@@ -5,7 +5,7 @@ def roman_to_int(roman):
     s = "LVIII" >> 58 >> L = 50, V = 5, III = 3
     s = "IV" >> 4 >> V - I = 4
 
-    Runtime: O(1)  >> since max length of 
+    Runtime: O(1)  >> since max length of valid roman numeral is 15
     Space: O(1)
     """
     # Hashmap problem
