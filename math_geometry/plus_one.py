@@ -17,26 +17,24 @@ def plus_one(digits):
     Runtime: O(N)
     Space: O(1)
     """
-    # Pointer method
-    last = len(digits) - 1
+    # First add 1 to end of array
+    digits[-1] += 1
 
-    while last >= 0:
-        if digits[last] == 9:
-            digits[last] = 0
+    # Loop starting from end of array and change current value if digits[i] + 1 is equal to 10
+    for i in range(len(digits)-1, -1, -1):
+        if digits[i] != 10:
+            break
         else:
-            digits[last] += 1
-            return digits
-        last -= 1
-    return [1] + digits
+            # If digits + 1 == 10, then make current value to 0 and add 1 to the left index of current index
+            digits[i] = 0
+            digits[i-1] += 1
+    else:  # After looping, get the we have a 10 in the first index of array
+        # Make first index value be 1 and then just append 0 to end of array
+        digits[0] = 1
+        digits.append(1)
 
-    # while last >= 0:  # [1, 0, 9]
-    #     if digits[last] == 9:
-    #         digits[last] = 0
-    #         last -= 1
-    #     digits[last] += 1
-    # # digits[last] += 1
-    # return digits
+    return digits
 
 
-digits = [1, 9, 9, 9]
+digits = [1, 2, 9]
 print(plus_one(digits))

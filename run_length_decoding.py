@@ -37,5 +37,5 @@ def run_length(input_string):
     return result_string
 
 
-input_string = "wwwwaaadexxxxxx"
+input_string = "ababcdcdcd"
 print(run_length(input_string))

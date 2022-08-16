@@ -12,7 +12,7 @@ def top_k_frequent(nums, k):
         nums = [1], k = 1 >> [1]
 
     BUCKET SORT WITH HASHING
-    Runtime: O(n) >> 
+    Runtime: O(n) 
     Space: O(n) 
 
     HashMap the elements in our array to get counter >> Space: O(N)
